@@ -97,7 +97,7 @@ const questions = [{
     if (nameInput) {
       return true;
     } else {
-      console.log('Please choose a liscense from the list.');
+      console.log('Please choose a license from the list.');
       return false;
     }
   }

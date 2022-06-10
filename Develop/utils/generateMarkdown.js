@@ -48,10 +48,59 @@ function generateMarkdown(data) {
     licenseOption = 'TheUnlicense';
     licenseLink = 'https://choosealicense.com/licenses/unlicense/';
   };
+  //im just going to create variables to add stuff to instead of using fucntions
+  let markdownTemplate =
+    
+  //title, badge, and description
+    
+  `# ${data.title}
+  ## Description
+  ${data.description}
+  ![badge](https://img.shields.io/badge/license-${licenseOption}-brightorange)
+  More badges at [shields.io](https://shields.io)
+  `;
 
-  return `# ${data.title}
+  let tableOfContents =
+  `## Table of Contents
+  * [Installation](#install)
+  * [Usage](#instruct)
+  * [Contribution](#contr)
+  * [Testing](#test)
+  * [Contact Info](#contact)
+  * [License](#license)
+  ## Installation
+    _Follow the steps to install:_
 
-`;
+    ${data.install}
+  
+  ## Usage
+    _Follow the steps to use:_
+
+    ${data.instruct}
+   
+  ## Contribution
+    _Follow the steps to contribute:_
+
+    ${data.contr}
+  ## Usage
+    _Follow the steps to test:_
+
+    ${data.test}
+  ## Contact Info
+    _How to contact the author(s):_
+
+    ${data.contact}
+
+    Git: [${data.user}](https:/gitub.com/${data.user})
+    Email: [${data.email}](mailto:${data.email})
+
+  ## Liscense
+
+    _This program is under the ${data.license} liscense._
+
+    For more information, please see [liscense description](${liscenseLink}).
+  `;
+  return markdownTemplate;
 }
 
 module.exports = generateMarkdown;
