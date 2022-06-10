@@ -6,7 +6,7 @@ const inquirer = require('inquirer');
 const questions = [{
     type: 'input',
     name: 'title',
-    message: 'What is the title of your repository? (Required)',
+    message: 'Repo title?',
     //check to see if the user put anything in the input
     validate: nameInput => {
     if (nameInput) {
@@ -17,7 +17,76 @@ const questions = [{
     }
   }
 },
-
+{
+    type: 'input',
+    name: 'desc',
+    message: 'Enter description.',
+    //check to see if the user put anything in the input
+    validate: nameInput => {
+    if (nameInput) {
+      return true;
+    } else {
+      console.log('Please enter the decription.');
+      return false;
+    }
+  }
+},
+{
+    type: 'input',
+    name: 'install',
+    message: 'Enter installation instructions.',
+    //check to see if the user put anything in the input
+    validate: nameInput => {
+    if (nameInput) {
+      return true;
+    } else {
+      console.log('Please enter the installation instructions (N/A if none).');
+      return false;
+    }
+  }
+},
+{
+    type: 'input',
+    name: 'instruct',
+    message: 'Enter program instructions.',
+    //check to see if the user put anything in the input
+    validate: nameInput => {
+    if (nameInput) {
+      return true;
+    } else {
+      console.log('Please enter program instructions (N/A if none).');
+      return false;
+    }
+  }
+},
+{
+    type: 'input',
+    name: 'contr',
+    message: 'Explain how others can contribute to this application.',
+    //check to see if the user put anything in the input
+    validate: nameInput => {
+    if (nameInput) {
+      return true;
+    } else {
+      console.log('Please enter the contribution instructions (N/A if none).');
+      return false;
+    }
+  }
+},
+{
+    type: 'input',
+    name: 'test',
+    message: 'Explain how people can test your application.',
+    //check to see if the user put anything in the input
+    validate: nameInput => {
+    if (nameInput) {
+      return true;
+    } else {
+      console.log('Please enter the testing instructions (N/A if none).');
+      return false;
+    }
+  }
+},
 ];
 
 // TODO: Create a function to write README file
@@ -31,7 +100,7 @@ function writeToFile(fileName, data) {
 
 // TODO: Create a function to initialize app
 function init() {
-    
+
 }
 
 // Function call to initialize app
