@@ -80,11 +80,11 @@ function generateMarkdown(data) {
     Git: [${data.user}](https:/gitub.com/${data.user})
     Email: [${data.email}](mailto:${data.email})
 
-  ## Liscense
+  ## License
 
-    _This program is under the ${data.license} liscense._
+    _This program is under the ${data.license} license._
 
-    For more information, please see [liscense description](${licenseLink}).
+    For more information, please see [license description](${licenseLink}).
   `;
   return markdownTemplate;
 }
