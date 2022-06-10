@@ -87,6 +87,62 @@ const questions = [{
     }
   }
 },
+{
+  type: 'checkbox',
+  name: 'license',
+  message: 'Choose a license.',
+  choices: ['Apache License 2.0', 'Boost Software License 1.0', 'GNU AGPLv3', 'GNU GPLv3','GNU LGPLv3','The Unlicense', 'Mozilla Public License 2.0', 'MIT License'],
+  validate: nameInput => {
+    if (nameInput) {
+      return true;
+    } else {
+      console.log('Please choose a liscense from the list.');
+      return false;
+    }
+  }
+},
+{
+    type: 'input',
+    name: 'user',
+    message: 'Input username.',
+    //check to see if the user put anything in the input
+    validate: nameInput => {
+    if (nameInput) {
+      return true;
+    } else {
+      console.log('Please enter github username.');
+      return false;
+    }
+  }
+},
+{
+    type: 'input',
+    name: 'email',
+    message: 'Enter email.',
+    //check to see if the user put anything in the input
+    validate: nameInput => {
+    if (nameInput) {
+      return true;
+    } else {
+      console.log('Please enter your email.');
+      return false;
+    }
+  }
+},
+{
+    type: 'input',
+    name: 'contact',
+    message: 'Explain how others can contact you if they have questions.',
+    //check to see if the user put anything in the input
+    validate: nameInput => {
+    if (nameInput) {
+      return true;
+    } else {
+      console.log('Enter contact info.');
+      return false;
+    }
+  }
+}
 ];
 
 // TODO: Create a function to write README file
