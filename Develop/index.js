@@ -158,7 +158,7 @@ function writeToFile(fileName, data) {
 // TODO: Create a function to initialize app
 function init() {
     try {
-        const userAns = await inquirer.prompt(questions);
+        const userAns = inquirer.prompt(questions);
         console.log('Processing data to user README.md ', userAns);
 
         const markDown = generateMarkdown(userAns);

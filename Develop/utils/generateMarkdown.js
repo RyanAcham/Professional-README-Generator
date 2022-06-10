@@ -55,7 +55,7 @@ function generateMarkdown(data) {
     
   `# ${data.title}
   ## Description
-  ${data.description}
+  ${data.desc}
   ![badge](https://img.shields.io/badge/license-${licenseOption}-brightorange)
   More badges at [shields.io](https://shields.io)
   `;
@@ -98,7 +98,7 @@ function generateMarkdown(data) {
 
     _This program is under the ${data.license} liscense._
 
-    For more information, please see [liscense description](${liscenseLink}).
+    For more information, please see [liscense description](${licenseLink}).
   `;
   return markdownTemplate;
 }
