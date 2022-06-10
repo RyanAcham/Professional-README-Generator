@@ -1,21 +1,9 @@
-// TODO: Create a function that returns a license badge based on which license is passed in
-// If there is no license, return an empty string
-function renderLicenseBadge(license) {}
-
-// TODO: Create a function that returns the license link
-// If there is no license, return an empty string
-function renderLicenseLink(license) {}
-
-// TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
-function renderLicenseSection(license) {}
-
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
   let licenseOption = `${data.license}`;
   
   let licenseLink = '';
-  //check liscense choice
+  //check license choice
   if (licenseOption === 'GNU AGPLv3') {
     licenseOption = 'GNUAGPLv3';
     licenseLink = 'https://choosealicense.com/licenses/agpl-3.0/';
@@ -48,7 +36,7 @@ function generateMarkdown(data) {
     licenseOption = 'TheUnlicense';
     licenseLink = 'https://choosealicense.com/licenses/unlicense/';
   };
-  //im just going to create variables to add stuff to instead of using fucntions
+  //im just going to use template literals to add stuff to instead of using fucntions
   let markdownTemplate =
     
   //title, badge, and description
@@ -58,10 +46,8 @@ function generateMarkdown(data) {
   ${data.desc}
   ![badge](https://img.shields.io/badge/license-${licenseOption}-brightorange)
   More badges at [shields.io](https://shields.io)
-  `;
 
-  let tableOfContents =
-  `## Table of Contents
+  ## Table of Contents
   * [Installation](#install)
   * [Usage](#instruct)
   * [Contribution](#contr)
