@@ -3,6 +3,7 @@ const fs = require('fs');
 const inquirer = require('inquirer');
 const generateMarkdown = require('./utils/generateMarkdown');
 const util = require('util');
+const { writeFile } = require("fs/promises");
 // TODO: Create an array of questions for user input
 const questions = [{
     type: 'input',
@@ -147,12 +148,8 @@ const questions = [{
 ];
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {
-    fs.writeFile(fileName, data, error =>{
-        if (error){
-            return console.log('ERROR ERROR ERROR ERROR ERROR ERROR : '+error)
-        }
-    })
+async function writeToFile(fileName, data) {
+    await writeFile(fileName, data, (err) => {});
 }
 
 const createReadMe = util.promisify(writeToFile);
@@ -164,7 +161,7 @@ async function init() {
 
         const markDown = generateMarkdown(userAns);
         console.log(markDown);
-        await createReadMe('README1.md, markDown');
+        await createReadMe('README1.md', markDown);
     }
     catch (error){
         console.log('ERROR: ' + error)
